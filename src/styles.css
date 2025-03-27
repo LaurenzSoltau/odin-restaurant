@@ -1,0 +1,113 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    --gold: #E0BA80;
+    --dark: #4C3F3E;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+
+body {
+    background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(0, 0, 0, 0.6), 
+          rgba(0, 0, 0, 0.6)
+        ),
+        /* bottom, image */
+        url("./assets/background.jpg");
+    background-size: cover;
+}
+
+header {
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8vw;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav {
+    padding: 1.5rem 6rem;
+    background-color: var(--gold);
+    border: none;
+    border-radius: 16px;
+    color: var(--dark);
+    font-size: 2rem; 
+    font-weight: bold;
+}
+
+#logo {
+    height: clamp(100px, 10vw, 300px);
+}
+
+.hero {
+
+}
+
+.hero > h1 {
+    font-size: 4rem;
+}
+
+.hero > p {
+    font-size: 1.5rem;
+}
