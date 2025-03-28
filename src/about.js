@@ -2,10 +2,7 @@ import mapImage from "./assets/maps.png.jpg";
 const telNumber = '123456789';
 const email = "Amed-Grillhaus@icloud.com"
 
-export function loadAboutPage() {
-    const contentDiv = document.querySelector("#content");
-    contentDiv.textContent = "";
-
+export function aboutPage() {
     const aboutContainerDiv = document.createElement('div');
     aboutContainerDiv.classList.add("aboutContainer");
 
@@ -22,5 +19,5 @@ export function loadAboutPage() {
     aboutContainerDiv.appendChild(emailSpan);
     aboutContainerDiv.appendChild(mapImageElement);
     
-    contentDiv.appendChild(aboutContainerDiv);
+    return aboutContainerDiv;
 }

@@ -1,19 +1,27 @@
 import "./styles.css";
-import loadHomePage from "./homepage.js";
-import { loadMenuPage } from "./menu.js";
-import { loadAboutPage } from "./about.js";
+import { homePage } from "./homepage.js";
+import { menuPage } from "./menu.js";
+import { aboutPage } from "./about.js";
 
-addEventListener("load", () => loadHomePage());
+function loadPage(page) {
+    const contentDiv = document.querySelector("#content");
+    contentDiv.textContent = "";
 
-document.querySelector("#home").addEventListener("click", () => {
-    loadHomePage();
-})
+    const pageElement = page();
+    contentDiv.appendChild(pageElement);
+}
 
-document.querySelector("#menu").addEventListener("click", () => {
-    loadMenuPage();
-})
+document.addEventListener("DOMContentLoaded", () => {
+    loadPage(homePage);
+    document
+        .querySelector("#home")
+        .addEventListener("click", () => loadPage(homePage));
 
-document.querySelector("#about").addEventListener("click", () => {
-    loadAboutPage();
-})
+    document
+        .querySelector("#menu")
+        .addEventListener("click", () => loadPage(menuPage));
 
+    document
+        .querySelector("#about")
+        .addEventListener("click", () => loadPage(aboutPage));
+});

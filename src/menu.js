@@ -55,15 +55,13 @@ function createMenuItem(menuItem) {
     return container;
 }
 
-export function loadMenuPage() {
-    const contentDiv = document.querySelector("#content");
-    contentDiv.textContent = "";
-
+export function menuPage() {
     const menuContainer = document.createElement("div");
     menuContainer.classList.add("menuContainer");
 
     for (const product of products) {
         menuContainer.appendChild(createMenuItem(product));
     }
-    contentDiv.appendChild(menuContainer);
+
+    return menuContainer;
 }
